@@ -20,8 +20,12 @@
         </div>
         <div class="ground"></div>
       </div>
-      <label for="range-bat" class="range-bat"></label>
-      <input type="range" id="range-bat" min="0" max="22">
+      <div class="input-wrapper">
+        <label class="range-label" for="range-bat"></label>
+        <input type="range" id="range-bat" min="0" max="22" value="5" oninput="rangevalue.value=value"/>
+        <output id="rangevalue">5</output>
+      </div>
+
       <a href="./index.html" class="go-back-btn">Go back!</a>
     </section>
     <include src="./partials/game-over.html"></include>

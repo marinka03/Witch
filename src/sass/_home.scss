@@ -1,4 +1,5 @@
 body {
+  font-size: 16px;
   background-color: #1f042b;
 }
 section {
@@ -17,9 +18,9 @@ a {
   transition: background-color 0.5s ease-in-out;
 }
 a:hover {
-    color:rgb(69, 68, 110);
-    background-color: rgb(241, 199, 231);
-    border: 4px solid rgb(129, 57, 57);
+  color: rgb(69, 68, 110);
+  background-color: rgb(241, 199, 231);
+  border: 4px solid rgb(129, 57, 57);
 }
 .container-home {
   position: absolute;

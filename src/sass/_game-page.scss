@@ -180,19 +180,39 @@ animation: wMove 500ms linear  infinite;
     rgba(121, 124, 17, 1) 99%
   );
 }
-.range-bat{
+.input-wrapper{
+  position: relative;
+  left: 40rem;
+}
+.range-label{
   background-image: url(../images/bat.png);
   width: 40px;
   height: 20px;
   background-size: 40px 20px;
   background-repeat: no-repeat;
-  position: absolute;
-  bottom: 211px;
-  left: 286px;
+  display: block;
+    margin: 0;
+    position: relative;
+    right: 4rem;
+    top: 1rem;
+  // position: relative;
+  // left: 44em;
 }
 #range-bat{
-  width: 400px;
+  width: 540px;
   margin: 0 auto;
+  accent-color: #C70039;
+}
+
+#rangevalue{
+  width: 45px;
+  height: 20px;
+  display: inline-block;
+  background-color: darksalmon;
+  border: 1px solid floralwhite;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 18px;
 }
 .go-back-btn {
   width: 400px;
