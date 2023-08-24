@@ -102,14 +102,14 @@ a:hover {
 .move {
   animation: wMove 500ms linear infinite;
 }
-/* @keyframes wMove {
+@keyframes wMove {
      0% {
        background-image: url(../images/witchM1.png);
      }
      100% {
        background-image: url(../images/witchM2.png);
      }
-   } */
+   }
 
 #fire {
   width: 33px;
