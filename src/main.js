@@ -1,69 +1,47 @@
-const witch = document.getElementById('witch');
-const fire = document.getElementById('fire');
-const arrow = document.getElementById('arrow');
-const bat = document.getElementById('bat');
-const inputWrapper = document.getElementById('input-wrapper');
-const output = document.getElementById('rangevalue');
-let rangeBat = document.getElementById('range-bat');
+const container = document.querySelector('.container');
+const modalWrapper = document.querySelector('.modal-wrapper');
 
-// let batRight = parseInt(window.getComputedStyle(bat).getPropertyValue('right'));
+const btn = document.getElementById('rules-btn');
 
-// bat.addEventListener('input', function onInput(evt) {
+const TEXT = 'You need to collect all the bats and jump over fire and arrows. The Inquisition is hunting you. Be brave and be careful!';
+const TITLE = 'Rules';
 
-//   let value = rangeBat.value;
-//   console.log("value",value)
-//   if (batRight === 800 && witchBottom < 5) {
-//    return value += 1;
-//   }
-// });
+btn.addEventListener('click', openModal);
 
-// console.log(witch.style.animation = "wMove 500ms linear 1s infinite");
+function openModal(evt) {
+  const markup = `<div class="backdrop">
+  <div class="modal">
+    <div class="modal-container">
+      <button type="button" class="close-modal">Close</button>
+      <h2 class="title-modal">${TITLE}</h2>
+      <p class="text-modal">${TEXT}</p>
+    </div>
+  </div>
+  </div>`;
 
-document.addEventListener('keydown', function keydown(event) {
-  jump();
-});
-witch.classList.add('move');
+  btn.removeEventListener('click', openModal);
 
-function jump() {
-  if (witch.classList != 'jump') {
-    witch.classList.add('jump');
-    witch.classList.remove('move');
+  container.insertAdjacentHTML('afterend', markup);
+
+  const closeModal = document.querySelector('.close-modal');
+  const backdrop = document.querySelector('.backdrop');
+
+  backdrop.style.display = 'block';
+
+  closeModal.addEventListener('click', onClose);
+  function onClose(evt) {
+    console.dir(evt.target);
+    backdrop.innerHTML = '';
+    backdrop.style.display = 'none';
+
+    closeModal.removeEventListener('click', onClose);
+    btn.addEventListener('click', openModal);
   }
-  setTimeout(function () {
-    witch.classList.add('move');
-    witch.classList.remove('jump');
-  }, 600);
 }
-let witchBottom = parseInt(
-  window.getComputedStyle(witch).getPropertyValue('bottom')
-);
-let batRight = parseInt(window.getComputedStyle(bat).getPropertyValue('right'));
-let value = rangeBat.value;
 
-let isAlive = setInterval(function life() {
-  let fireRight = parseInt(
-    window.getComputedStyle(fire).getPropertyValue('right')
-  );
-  let arrowRight = parseInt(
-    window.getComputedStyle(arrow).getPropertyValue('right')
-  );
-  let witchBottom = parseInt(window.getComputedStyle(witch).getPropertyValue('bottom'))
-
-
-  if (
-    (fireRight < 825 && fireRight > 780 && witchBottom < 20) ||
-    (arrowRight < 812 && arrowRight > 767 && witchBottom < 20)
-  ) {
-    rangeBat.value = 0;
-    output.value = 0;
-    window.alert('GAME OVER !!!');
-  }
-}, 10);
-
-  // let batRight = parseInt(
-  //   window.getComputedStyle(bat).getPropertyValue('right')
-  // );
-
+// let batRight = parseInt(
+//   window.getComputedStyle(bat).getPropertyValue('right')
+// );
 
 // if (batRight < 812 && batRight > 767 && batRight < 20) {
 //   value += 1;
