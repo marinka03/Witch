@@ -24,23 +24,31 @@ function jump() {
   }, 600);
 }
 
-let isAlive = setInterval(function life() {
-  let fireRight = parseInt(
-    window.getComputedStyle(fire).getPropertyValue('right')
-  );
-  let arrowRight = parseInt(
-    window.getComputedStyle(arrow).getPropertyValue('right')
-  );
-  let witchBottom = parseInt(
-    window.getComputedStyle(witch).getPropertyValue('bottom')
-  );
+// let isAlive = setInterval(function life() {
+//   let fireRight = parseInt(
+//     window.getComputedStyle(fire).getPropertyValue('right')
+//   );
+//   let arrowRight = parseInt(
+//     window.getComputedStyle(arrow).getPropertyValue('right')
+//   );
+//   let witchBottom = parseInt(
+//     window.getComputedStyle(witch).getPropertyValue('bottom')
+//   );
 
-  if (
-    (fireRight < 825 && fireRight > 780 && witchBottom < 20) ||
-    (arrowRight < 812 && arrowRight > 767 && witchBottom < 20)
-  ) {
-    rangeBat.value = 0;
-    output.value = 0;
-    window.alert('GAME OVER !!!');
-  }
-}, 10);
+//   if (
+//     (fireRight < 825 && fireRight > 780 && witchBottom < 20) ||
+//     (arrowRight < 812 && arrowRight > 767 && witchBottom < 20)
+//   ) {
+//     rangeBat.value = 0;
+//     output.value = 0;
+//     window.alert('GAME OVER !!!');
+//   }
+// }, 10);
+
+
+
+
+
+
+ 
+
