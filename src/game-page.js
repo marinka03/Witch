@@ -8,12 +8,14 @@ const inputWrapper = document.getElementById('input-wrapper');
 const output = document.getElementById('rangevalue');
 let rangeBat = document.getElementById('range-bat');
 
-document.addEventListener('keydown', function keydown(event) {
-  jump();
-});
+document.addEventListener('keydown', jump);
 witch.classList.add('move');
 
-function jump() {
+function jump(evt) {
+  if (evt.code !== 'ArrowUp') {
+    return;
+  }
+
   if (witch.classList != 'jump') {
     witch.classList.add('jump');
     witch.classList.remove('move');
@@ -23,6 +25,7 @@ function jump() {
     witch.classList.remove('jump');
   }, 600);
 }
+let batCounter = 0;
 
 // let isAlive = setInterval(function life() {
 //   let fireRight = parseInt(
@@ -41,14 +44,25 @@ function jump() {
 //   ) {
 //     rangeBat.value = 0;
 //     output.value = 0;
-//     window.alert('GAME OVER !!!');
+//     batCounter = 0;
+//     console.log('mertva')
+//     // window.alert('GAME OVER !!!');
 //   }
-// }, 10);
 
+// }, 100);
+// let isBatCounted = setInterval(function isBatCount() {
+//   let witchBottom = parseInt(
+//     window.getComputedStyle(witch).getPropertyValue('bottom')
+//   );
+//   let batRight = parseInt(
+//     window.getComputedStyle(bat).getPropertyValue('right')
+//   );
+//   if((batRight < 812 && batRight > 767 && witchBottom < 20)){
+//     batCounter += 1;
 
-
-
-
-
- 
-
+//     // console.dir(output.textContent)
+//     rangeBat.value = batCounter;
+//     console.dir(rangeBat.value)
+//     output.textContent = batCounter;
+//   }
+// },200)

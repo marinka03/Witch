@@ -3,7 +3,8 @@ const modalWrapper = document.querySelector('.modal-wrapper');
 
 const btn = document.getElementById('rules-btn');
 
-const TEXT = 'You need to collect all the bats and jump over fire and arrows. The Inquisition is hunting you. Be brave and be careful!';
+const TEXT =
+  'You need to collect all the bats and jump over fire and arrows. The Inquisition is hunting you. Be brave and be careful!';
 const TITLE = 'Rules';
 
 btn.addEventListener('click', openModal);

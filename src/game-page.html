@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Witch</title>
-    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/game-page.css" />
     <script defer type="module" src="./game-page.js"></script>
   </head>
@@ -23,8 +23,15 @@
       </div>
       <div class="input-wrapper">
         <label class="range-label" for="range-bat"></label>
-        <input type="range" id="range-bat" min="0" max="22" value="5" oninput="rangevalue.value=value"/>
-        <output id="rangevalue">5</output>
+        <input
+          type="range"
+          id="range-bat"
+          min="0"
+          max="22"
+          value="0"
+          oninput="rangevalue.value=value"
+        />
+        <output id="rangevalue">0</output>
       </div>
 
       <a href="../index.html" class="go-back-btn">Go back!</a>
