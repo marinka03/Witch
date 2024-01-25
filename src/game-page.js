@@ -61,9 +61,8 @@ let isAlive = setInterval(function life() {
     rangeBat.value = 0;
     output.value = 0;
     batCounter = 0;
-    console.log('mertva')
+    console.log('mertva');
   }
-
 }, 100);
 
 let isBatCounted = setInterval(function isBatCount() {
@@ -74,22 +73,20 @@ let isBatCounted = setInterval(function isBatCount() {
   let batRight = parseInt(
     window.getComputedStyle(bat).getPropertyValue('right')
   );
-// CHANGE COUNTER IN FUTURE
-  if(batCounter>=3){
+  // CHANGE COUNTER IN FUTURE
+  if (batCounter >= 3) {
     batCounter = 0;
     rangeBat.value = 0;
     output.value = 0;
-    clearInterval(isBatCounted)
+    clearInterval(isBatCounted);
   }
 
-  if((batRight < 812 && batRight > 767 && witchBottom < 20)){
+  if (batRight < 812 && batRight > 767 && witchBottom < 20) {
     batCounter += 1;
 
     // console.dir(output.textContent)
     rangeBat.value = batCounter;
-    console.dir(rangeBat.value)
+    console.dir(rangeBat.value);
     output.textContent = batCounter;
   }
-
-},200)
-
+}, 200);
