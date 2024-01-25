@@ -7,8 +7,8 @@ const output = document.getElementById('rangevalue');
 let rangeBat = document.getElementById('range-bat');
 // let witchBottom = parseInt(window.getComputedStyle(witch).getPropertyValue('bottom'))
 // let batRight = parseInt(window.getComputedStyle(bat).getPropertyValue('right'));
-let batCounter = 0;
 // bat.addEventListener('input', function onInput(evt) {
+let batCounter = 0;
 
 //   let value = rangeBat.value;
 //   console.log("value",value)
