@@ -7,7 +7,7 @@ const output = document.getElementById('rangevalue');
 let rangeBat = document.getElementById('range-bat');
 // let witchBottom = parseInt(window.getComputedStyle(witch).getPropertyValue('bottom'))
 // let batRight = parseInt(window.getComputedStyle(bat).getPropertyValue('right'));
-
+let batCounter = 0;
 // bat.addEventListener('input', function onInput(evt) {
 
 //   let value = rangeBat.value;
@@ -50,22 +50,46 @@ let isAlive = setInterval(function life() {
   let arrowRight = parseInt(
     window.getComputedStyle(arrow).getPropertyValue('right')
   );
-  // let batRight = parseInt(
-  //   window.getComputedStyle(bat).getPropertyValue('right')
-  // );
-  // let value = rangeBat.value;
+  let witchBottom = parseInt(
+    window.getComputedStyle(witch).getPropertyValue('bottom')
+  );
 
   if (
     (fireRight < 825 && fireRight > 780 && witchBottom < 20) ||
     (arrowRight < 812 && arrowRight > 767 && witchBottom < 20)
   ) {
-    // value = 0;
-    // output.value = 0;
-    window.alert('GAME OVER !!!');
+    rangeBat.value = 0;
+    output.value = 0;
+    batCounter = 0;
+    console.log('mertva')
   }
-}, 10);
 
-// if (batRight < 812 && batRight > 767 && batRight < 20) {
-//   value += 1;
-//   console.log(value);
-// }
+}, 100);
+
+let isBatCounted = setInterval(function isBatCount() {
+  let witchBottom = parseInt(
+    window.getComputedStyle(witch).getPropertyValue('bottom')
+  );
+
+  let batRight = parseInt(
+    window.getComputedStyle(bat).getPropertyValue('right')
+  );
+// CHANGE COUNTER IN FUTURE
+  if(batCounter>=3){
+    batCounter = 0;
+    rangeBat.value = 0;
+    output.value = 0;
+    clearInterval(isBatCounted)
+  }
+
+  if((batRight < 812 && batRight > 767 && witchBottom < 20)){
+    batCounter += 1;
+
+    // console.dir(output.textContent)
+    rangeBat.value = batCounter;
+    console.dir(rangeBat.value)
+    output.textContent = batCounter;
+  }
+
+},200)
+

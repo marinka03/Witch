@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://marinka03.github.io/Inquisition",
+  "homepage": "https://marinka03.github.io/Witch",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /Inquisition/"
+    "build": "parcel build src/*.html --public-url /Witch/"
   },
   "repository": {
     "type": "git",
