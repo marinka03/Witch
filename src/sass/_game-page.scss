@@ -1,233 +1,5 @@
-// .container-game {
-//   margin: 70px auto 40px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   border: 2px solid black;
-//   width: 900px;
-//   height: 600px;
-//   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-//   background-repeat: repeat-x;
-//   flex-direction: column;
-//   border-radius: 10px;
-//   overflow: hidden;
-// }
-
-// .sky {
-//   width: 100%;
-//   height: 390px;
-//   background-image: linear-gradient(
-//     162deg,
-//     rgba(30, 14, 71, 1) 39%,
-//     rgba(185, 12, 12, 1) 98%,
-//     rgba(252, 176, 69, 1) 98.9%
-//   );
-//   position: relative;
-// }
-// #cloud {
-//   margin: 20px 0 0;
-//   position: absolute;
-//   width: 138px;
-//   height: 40px;
-//   z-index: 1;
-//   background-color: #97848e;
-//   border-radius: 100px;
-//   top: 30px;
-//   right: -140px;
-//   animation: skyMove 90s linear infinite;
-// }
-// #cloud::after,
-// #cloud::before {
-//   content: '';
-//   position: absolute;
-//   background-color: #97848e;
-// }
-// #cloud::after {
-//   width: 40px;
-//   height: 38px;
-//   border-radius: 100px;
-//   bottom: 18px;
-//   left: 24px;
-// }
-// #cloud::before {
-//   width: 53px;
-//   height: 53px;
-//   border-radius: 50%;
-//   bottom: 15px;
-//   right: 27px;
-// }
-// @keyframes skyMove {
-//   0% {
-//     right: -140px;
-//   }
-//   100% {
-//     right: 960px;
-//   }
-// }
-
-// #witch {
-//   width: 40px;
-//   height: 50px;
-//   background-image: url(../images/witchM1.png);
-//   position: absolute;
-//   background-size: 40px 50px;
-//   left: 50px;
-//   bottom: 0px;
-// }
-// .move{
-// animation: wMove 500ms linear  infinite;
-// }
-// // @keyframes wMove {
-// //   0% {
-// //     background-image: url(../images/witchM1.png);
-// //   }
-// //   100% {
-// //     background-image: url(../images/witchM2.png);
-// //   }
-// // }
-
-// #fire {
-//   width: 33px;
-//   height: 38px;
-//   background-image: url(../images/fire.png);
-//   background-repeat: no-repeat;
-//   position: absolute;
-//   right: -35px;
-//   bottom: 0px;
-//   animation: backgroundMove 8235ms linear infinite,
-//     fMove 500ms linear 1s infinite;
-// }
-// @keyframes fMove {
-//   0% {
-//     background-image: url(../images/fire.png);
-//   }
-//   100% {
-//     background-image: url(../images/fire2.png);
-//   }
-// }
-// #arrow {
-//   width: 40px;
-//   height: 15px;
-//   background-image: url(../images/arrow.png);
-//   background-repeat: no-repeat;
-//   position: absolute;
-//   right: -50px;
-//   bottom: 9px;
-//   animation: backgroundMove 8050ms linear 63s infinite;
-//   // animation: backgroundMove 1000ms linear 1s infinite;
-// }
-// #bat {
-//   width: 40px;
-//   height: 20px;
-//   background-size: 40px 20px;
-//   background-image: url(../images/bat.png);
-//   background-repeat: no-repeat;
-//   position: absolute;
-//   right: -50px;
-//   bottom: 9px;
-//   animation: backgroundMove 11070ms linear 4s infinite;
-// }
-// @keyframes backgroundMove {
-//   0% {
-//     right: -50px;
-//   }
-//   25% {
-//     right: 225px;
-//   }
-//   50% {
-//     right: 500px;
-//   }
-//   80% {
-//     right: 880px;
-//   }
-//   90% {
-//     right: 920px;
-//   }
-//   100% {
-//     right: 950px;
-//   }
-// }
-
-// .jump {
-//   animation: jump 700ms linear;
-// }
-
-// @keyframes jump {
-//   0% {
-//     bottom: 0px;
-//   }
-//   30% {
-//     bottom: 60px;
-//   }
-//   50% {
-//     bottom: 130px;
-//   }
-//   80% {
-//     bottom: 50px;
-//   }
-//   100% {
-//     bottom: 0px;
-//   }
-// }
-
-// .ground {
-//   width: 100%;
-//   height: 210px;
-//   background: linear-gradient(
-//     1deg,
-//     rgba(13, 36, 20, 1) 42%,
-//     rgba(57, 60, 17, 1) 95%,
-//     rgba(121, 124, 17, 1) 99%
-//   );
-// }
-// .input-wrapper{
-//   position: relative;
-//   left: 40rem;
-// }
-// .range-label{
-//   background-image: url(../images/bat.png);
-//   width: 40px;
-//   height: 20px;
-//   background-size: 40px 20px;
-//   background-repeat: no-repeat;
-//   display: block;
-//     margin: 0;
-//     position: relative;
-//     right: 4rem;
-//     top: 1rem;
-//   // position: relative;
-//   // left: 44em;
-// }
-// #range-bat{
-//   width: 540px;
-//   margin: 0 auto;
-//   accent-color: #C70039;
-// }
-
-// #rangevalue{
-//   width: 45px;
-//   height: 20px;
-//   display: inline-block;
-//   background-color: darksalmon;
-//   border: 1px solid floralwhite;
-//   border-radius: 4px;
-//   text-align: center;
-//   font-size: 18px;
-// }
-// .go-back-btn {
-//   width: 400px;
-//   text-decoration: none;
-//   color: rgb(241, 199, 231);
-//   background-color: rgb(69, 68, 110);
-//   border: 4px solid rgb(161, 84, 84);
-//   border-radius: 6px;
-//   padding: 5px 15px;
-//   margin: 40px auto 0;
-//   line-height: 1.5;
-//   text-align: center;
-//   text-transform: uppercase;
-// }
 .container-game {
+  position: relative;
   margin: 70px auto 40px;
   display: flex;
   justify-content: center;
@@ -410,13 +182,13 @@
   );
 }
 .input-wrapper {
-  width: 595px;
-  position: relative;
-  left: 40rem;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  right: 15px;
 }
 .range-label {
   background-image: url(../images/bat.png);
-  width: 40px;
   height: 20px;
   background-size: 40px 20px;
   background-repeat: no-repeat;
@@ -427,20 +199,20 @@
   top: 1rem;
 }
 #range-bat {
-  width: 540px;
+  width: 230px;
   margin: 0 auto;
   accent-color: #c70039;
 }
 
 #rangevalue {
-  width: 45px;
-  height: 20px;
+  width: 60px;
+  height: 30px;
   display: inline-block;
   background-color: darksalmon;
   border: 1px solid floralwhite;
-  border-radius: 4px;
+  border-radius: 20px;
   text-align: center;
-  font-size: 18px;
+  font-size: 19px;
 }
 .go-back-btn {
   width: 400px;

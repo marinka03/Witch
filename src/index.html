@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Witch</title>
+    <link rel="icon" href="./images/favicon.ico" />
     <link rel="stylesheet" href="./sass/index.scss" />
-    <script defer type="module" src="./index.js"></script>
+    <script defer type="module" src="./js/index.js"></script>
   </head>
   <body>
     <main>
@@ -19,8 +20,28 @@
               <button type="button" id="rules-btn">Rules</button>
             </nav>
           </div>
+         
         </div>
       </section>
+      <div id="myModal" class="modal fade" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content bg-danger-subtle">
+            <div class="modal-header">
+                <h5 class="modal-title">Rules</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p> You need to collect as many bats as possible. However,
+                  you have to save your witch. Jump over all the troubles that await you on this path.
+                  To jump use this key <button type="button" class="btn btn-outline-secondary" disabled>&#8657
+                  </button> or key <button type="button" class="btn btn-outline-secondary" disabled>W</button>
+                  .The Inquisition is hunting you. Be brave and be careful!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" role="button" data-bs-dismiss="modal">Ok</button>
+            </div>
+            </div>
+        </div>
     </main>
   </body>
 </html>

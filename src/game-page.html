@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Witch</title>
     <link rel="stylesheet" href="./sass/index.scss" />
-    <script defer type="module" src="./game-page.js"></script>
+    <script defer type="module" src="./js/game-page.js"></script>
   </head>
   <body>
-    <section>
+    <section>      
       <div class="container-game">
         <div class="sky">
           <div id="cloud"></div>
@@ -19,22 +19,56 @@
           <div id="bat"></div>
         </div>
         <div class="ground"></div>
+        <div class="input-wrapper">
+          <label class="range-label" for="range-bat"></label>
+          <input
+            type="range"
+            id="range-bat"
+            min="0"
+            max="15"
+            value="0"
+            oninput="rangevalue.value=value"
+          />
+          <output id="rangevalue">0</output>
+        </div>
       </div>
-      <div class="input-wrapper">
-        <label class="range-label" for="range-bat"></label>
-        <input
-          type="range"
-          id="range-bat"
-          min="0"
-          max="3"
-          value="0"
-          oninput="rangevalue.value=value"
-        />
-        <output id="rangevalue">0</output>
-      </div>
+     
 
       <a href="./index.html" class="go-back-btn">Go back!</a>
+      <div id="modal-dead" class="modal fade" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">DEAD</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>ARE YOU WANT TO TRY AGAIN?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="./index.html" role="button">No</a>
+                <button type="button" class="btn" id="reload-btn-dead">Yes, why not</button>
+            </div>
+            </div>
+        </div>
+
+        <div id="modal-win" class="modal fade" tabindex="-1" data-bs-backdrop="static">
+          <div class="modal-dialog">
+              <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">WINNER</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>ARE YOU WANT TO TRY AGAIN?</p>
+              </div>
+              <div class="modal-footer">
+                  <a href="./index.html" role="button">No</a>
+                  <button type="button" class="btn" id="reload-btn-win">Yes, why not</button>
+              </div>
+              </div>
+          </div>
+    </div>
     </section>
-    <!-- <include src="./partials/game-over.html"></include> -->
   </body>
 </html>
