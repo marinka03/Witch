@@ -38,7 +38,6 @@ let isAlive = setInterval(function life() {
     (fireRight < 830 && fireRight > 780 && witchBottom < 20) ||
     (arrowRight < 812 && arrowRight > 767 && witchBottom < 20)
   ) {
-    console.log(fire.style.right);
     rangeBat.value = 0;
     output.value = 0;
     batCounter = 0;
@@ -54,7 +53,8 @@ let isAlive = setInterval(function life() {
     arrow.style.animation = 'none';
     fire.style.animation = 'none';
     cloud.style.animation = 'none';
-    console.log((bat.style.animation = 'none'));
+    clearInterval(isAlive);
+    clearInterval(isBatCounted);
     myModal.show();
   }
 }, 100);
@@ -74,9 +74,10 @@ let isBatCounted = setInterval(function isBatCount() {
     output.value = 0;
     var myModal = new bootstrap.Modal(document.getElementById('modal-win'), {});
     reloadBtnW.addEventListener('click', () => {
+      clearInterval(isAlive);
+      clearInterval(isBatCounted);
       document.location.reload();
     });
-    // myModal.show()
   }
 
   if (batRight < 812 && batRight > 767 && witchBottom < 20) {
