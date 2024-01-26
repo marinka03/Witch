@@ -5,18 +5,18 @@ const witch = document.getElementById('witch');
 const fire = document.getElementById('fire');
 const arrow = document.getElementById('arrow');
 const bat = document.getElementById('bat');
+const cloud = document.getElementById('cloud');
 const output = document.getElementById('rangevalue');
 let rangeBat = document.getElementById('range-bat');
-const reloadBtnD = document.getElementById("reload-btn-dead")
-const reloadBtnW =document.getElementById('reload-btn-win')
+const reloadBtnD = document.getElementById('reload-btn-dead');
+const reloadBtnW = document.getElementById('reload-btn-win');
 
 let batCounter = 0;
 
 document.addEventListener('keydown', function keydown(e) {
-  if(e.code === "ArrowUp" || e.code === "KeyW"){
+  if (e.code === 'ArrowUp' || e.code === 'KeyW') {
     jumpWitch(witch);
   }
-
 });
 witch.classList.add('move');
 
@@ -35,16 +35,28 @@ let isAlive = setInterval(function life() {
   );
 
   if (
-    (fireRight < 825 && fireRight > 780 && witchBottom < 20) ||
+    (fireRight < 830 && fireRight > 780 && witchBottom < 20) ||
     (arrowRight < 812 && arrowRight > 767 && witchBottom < 20)
   ) {
+    console.log(fire.style.right);
     rangeBat.value = 0;
     output.value = 0;
     batCounter = 0;
-    var myModal = new bootstrap.Modal(document.getElementById("modal-dead"), {});
-    reloadBtnD.addEventListener('click', ()=>{document.location.reload()})
-    myModal.show()
-}
+    var myModal = new bootstrap.Modal(
+      document.getElementById('modal-dead'),
+      {}
+    );
+    reloadBtnD.addEventListener('click', () => {
+      document.location.reload();
+    });
+    bat.style.animation = 'none';
+    witch.style.animation = 'none';
+    arrow.style.animation = 'none';
+    fire.style.animation = 'none';
+    cloud.style.animation = 'none';
+    console.log((bat.style.animation = 'none'));
+    myModal.show();
+  }
 }, 100);
 
 let isBatCounted = setInterval(function isBatCount() {
@@ -60,9 +72,11 @@ let isBatCounted = setInterval(function isBatCount() {
     batCounter = 0;
     rangeBat.value = 0;
     output.value = 0;
-    var myModal = new bootstrap.Modal(document.getElementById("modal-win"), {});
-    reloadBtnW.addEventListener('click', ()=>{document.location.reload()})
-    myModal.show()
+    var myModal = new bootstrap.Modal(document.getElementById('modal-win'), {});
+    reloadBtnW.addEventListener('click', () => {
+      document.location.reload();
+    });
+    // myModal.show()
   }
 
   if (batRight < 812 && batRight > 767 && witchBottom < 20) {
