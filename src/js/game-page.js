@@ -5,6 +5,7 @@ const witch = document.getElementById('witch');
 const fire = document.getElementById('fire');
 const arrow = document.getElementById('arrow');
 const bat = document.getElementById('bat');
+
 const cloud = document.getElementById('cloud');
 const output = document.getElementById('rangevalue');
 let rangeBat = document.getElementById('range-bat');
@@ -20,28 +21,30 @@ document.addEventListener('keydown', function keydown(e) {
 });
 witch.classList.add('move');
 
-let batRight = parseInt(window.getComputedStyle(bat).getPropertyValue('right'));
-let value = rangeBat.value;
+// let batRight = parseInt(window.getComputedStyle(bat).getPropertyValue('right'));
+// let value = rangeBat.value;
 
-let isAlive = setInterval(function life() {
-  let fireRight = parseInt(
-    window.getComputedStyle(fire).getPropertyValue('right')
-  );
-  let arrowRight = parseInt(
-    window.getComputedStyle(arrow).getPropertyValue('right')
-  );
-  let witchBottom = parseInt(
-    window.getComputedStyle(witch).getPropertyValue('bottom')
-  );
+function areElementsTouching(element1, element2) {
+  // Отримуємо координати та розміри першого елемента
+  const rect1 = element1.getBoundingClientRect();
+  // Отримуємо координати та розміри другого елемента
+  const rect2 = element2.getBoundingClientRect();
 
-  if (
-    (fireRight < 830 && fireRight > 780 && witchBottom < 20) ||
-    (arrowRight < 812 && arrowRight > 767 && witchBottom < 20)
-  ) {
+  // Перевіряємо, чи координати та розміри перетинаються
+  return !(
+    rect1.right < rect2.left ||
+    rect1.left > rect2.right ||
+    rect1.bottom < rect2.top ||
+    rect1.top > rect2.bottom
+  );
+}
+
+let isTouch = setInterval(() => {
+  if (areElementsTouching(witch, fire) || areElementsTouching(witch, arrow)) {
     rangeBat.value = 0;
     output.value = 0;
     batCounter = 0;
-    var myModal = new bootstrap.Modal(
+    var myModalLoose = new bootstrap.Modal(
       document.getElementById('modal-dead'),
       {}
     );
@@ -53,36 +56,38 @@ let isAlive = setInterval(function life() {
     arrow.style.animation = 'none';
     fire.style.animation = 'none';
     cloud.style.animation = 'none';
-    clearInterval(isAlive);
+    clearInterval(isTouch);
     clearInterval(isBatCounted);
-    myModal.show();
+    myModalLoose.show();
   }
-}, 100);
+}, 120);
 
-let isBatCounted = setInterval(function isBatCount() {
-  let witchBottom = parseInt(
-    window.getComputedStyle(witch).getPropertyValue('bottom')
-  );
-
-  let batRight = parseInt(
-    window.getComputedStyle(bat).getPropertyValue('right')
-  );
-  // CHANGE COUNTER IN FUTURE
-  if (batCounter >= 15) {
-    batCounter = 0;
-    rangeBat.value = 0;
-    output.value = 0;
-    var myModal = new bootstrap.Modal(document.getElementById('modal-win'), {});
-    reloadBtnW.addEventListener('click', () => {
-      clearInterval(isAlive);
-      clearInterval(isBatCounted);
-      document.location.reload();
-    });
-  }
-
-  if (batRight < 812 && batRight > 767 && witchBottom < 20) {
+let isBatCounted = setInterval(() =>{
+  if (areElementsTouching(witch, bat)) {
     batCounter += 1;
     rangeBat.value = batCounter;
     output.textContent = batCounter;
+
+  }
+  if (batCounter == 10) {
+    // batCounter = 0;
+    // rangeBat.value = 0;
+    // output.value = 0;
+    var myModalWin = new bootstrap.Modal(
+      document.getElementById('modal-win'),
+      {}
+    );
+    reloadBtnW.addEventListener('click', () => {
+      document.location.reload();
+    });
+    bat.style.animation = 'none';
+    witch.style.animation = 'none';
+    arrow.style.animation = 'none';
+    fire.style.animation = 'none';
+    cloud.style.animation = 'none';
+    clearInterval(isTouch);
+    clearInterval(isBatCounted);
+    myModalWin.show();
+
   }
 }, 200);

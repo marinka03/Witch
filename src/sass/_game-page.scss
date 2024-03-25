@@ -1,17 +1,21 @@
 .container-game {
   position: relative;
-  margin: 70px auto 40px;
+  margin: 30px auto;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 2px solid black;
-  width: 900px;
-  height: 600px;
+  width: 94vw;
+  height: 70vh;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   background-repeat: repeat-x;
   flex-direction: column;
   border-radius: 10px;
   overflow: hidden;
+  @media (min-width: 1040px) {
+    width: 900px;
+    height: 600px;
+  }
 }
 
 .sky {
@@ -96,7 +100,7 @@
   right: -35px;
   bottom: 0px;
   animation: backgroundMove 2535ms linear infinite,
-    fMove 500ms linear 1s infinite;
+    fMove 350ms linear 1s infinite;
 }
 @keyframes fMove {
   0% {
@@ -114,7 +118,7 @@
   position: absolute;
   right: -50px;
   bottom: 9px;
-  animation: backgroundMove 2050ms linear 20s infinite;
+  animation: backgroundMove 3s linear 21s infinite;
 }
 #bat {
   width: 40px;
@@ -125,7 +129,7 @@
   position: absolute;
   right: -50px;
   bottom: 9px;
-  animation: backgroundMove 5570ms linear 4s infinite; /*change in feature*/
+  animation: backgroundMove 3s linear 4s infinite; /*change in feature*/
 }
 @keyframes backgroundMove {
   0% {
@@ -181,7 +185,7 @@
   );
 }
 .input-wrapper {
-  width: 300px;
+  width: 50vw;
   position: absolute;
   top: 0;
   right: 15px;
@@ -198,13 +202,16 @@
   top: 1rem;
 }
 #range-bat {
-  width: 230px;
+  width: 37vw;
   margin: 0 auto;
   accent-color: #c70039;
+  @media (min-width: 768px) {
+    width: 300px;
+  }
 }
 
 #rangevalue {
-  width: 60px;
+  width: 10vw;
   height: 30px;
   display: inline-block;
   background-color: darksalmon;
@@ -212,9 +219,16 @@
   border-radius: 20px;
   text-align: center;
   font-size: 19px;
+  @media (min-width: 768px) {
+    width: 60px;
+  }
 }
 .go-back-btn {
-  width: 400px;
+  display: block;
+  width: 300px;
   padding: 5px 15px;
-  margin: 40px auto 0;
+  margin: 0 auto;
+  @media (min-width: '768px') {
+    width: 400px;
+  }
 }
