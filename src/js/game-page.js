@@ -21,16 +21,9 @@ document.addEventListener('keydown', function keydown(e) {
 });
 witch.classList.add('move');
 
-// let batRight = parseInt(window.getComputedStyle(bat).getPropertyValue('right'));
-// let value = rangeBat.value;
-
 function areElementsTouching(element1, element2) {
-  // Отримуємо координати та розміри першого елемента
   const rect1 = element1.getBoundingClientRect();
-  // Отримуємо координати та розміри другого елемента
   const rect2 = element2.getBoundingClientRect();
-
-  // Перевіряємо, чи координати та розміри перетинаються
   return !(
     rect1.right < rect2.left ||
     rect1.left > rect2.right ||
@@ -70,9 +63,6 @@ let isBatCounted = setInterval(() =>{
 
   }
   if (batCounter == 10) {
-    // batCounter = 0;
-    // rangeBat.value = 0;
-    // output.value = 0;
     var myModalWin = new bootstrap.Modal(
       document.getElementById('modal-win'),
       {}
