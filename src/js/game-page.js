@@ -32,6 +32,16 @@ function areElementsTouching(element1, element2) {
   );
 }
 
+function gameOver(){
+  bat.style.animation = 'none';
+  witch.style.animation = 'none';
+  arrow.style.animation = 'none';
+  fire.style.animation = 'none';
+  cloud.style.animation = 'none';
+  clearInterval(isTouch);
+  clearInterval(isBatCounted);
+}
+
 let isTouch = setInterval(() => {
   if (areElementsTouching(witch, fire) || areElementsTouching(witch, arrow)) {
     rangeBat.value = 0;
@@ -44,13 +54,7 @@ let isTouch = setInterval(() => {
     reloadBtnD.addEventListener('click', () => {
       document.location.reload();
     });
-    bat.style.animation = 'none';
-    witch.style.animation = 'none';
-    arrow.style.animation = 'none';
-    fire.style.animation = 'none';
-    cloud.style.animation = 'none';
-    clearInterval(isTouch);
-    clearInterval(isBatCounted);
+    gameOver()
     myModalLoose.show();
   }
 }, 120);
@@ -70,13 +74,7 @@ let isBatCounted = setInterval(() =>{
     reloadBtnW.addEventListener('click', () => {
       document.location.reload();
     });
-    bat.style.animation = 'none';
-    witch.style.animation = 'none';
-    arrow.style.animation = 'none';
-    fire.style.animation = 'none';
-    cloud.style.animation = 'none';
-    clearInterval(isTouch);
-    clearInterval(isBatCounted);
+    gameOver()
     myModalWin.show();
 
   }
